@@ -1,4 +1,4 @@
-# Documentation for the SuperAwesome Android SDK
+# SuperAwesome Android SDK documentation
 
 To contribute:
 * clone the current repository on your machine
