@@ -12,9 +12,7 @@ There are also a few global SDK parameters you can change according to your need
 =============  ==============  =======
 Parameter      Values          Meaning
 =============  ==============  =======
-Configuration  | Production *  | Should the SDK get ads from
-               | Staging       | the production or test server.
-                               | Test placements are all on production.
+Configuration  | Production *  | Should always get ads from production server
 
 Test mode      | Enabled       | Should the SDK serve test ads. For test
                | Disabled *    | placements (30471, 30476, etc) must be Enabled.
@@ -35,12 +33,9 @@ You can specify them in your activity class (MainActivity.java).
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-            // mandatory setup for the Android SDK
+            // mandatory setup context for the Android SDK
             SuperAwesome.getInstance().setApplicationContext(getApplicationContext());
-
             SuperAwesome.getInstance().setConfigurationProduction();
-            // SuperAwesome.getInstance().setConfigurationStaging();
-
             SuperAwesome.getInstance().enableTestMode();
             // SuperAwesome.getInstance().disableTestMode();
         }
