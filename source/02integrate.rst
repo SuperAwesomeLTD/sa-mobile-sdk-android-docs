@@ -23,7 +23,7 @@ Just include the following in your module's **build.gradle** file (usually the f
     }
 
     dependencies {
-        compile 'tv.superawesome.sdk:sa-sdk:<sdk_version>@aar'
+        compile 'tv.superawesome.sdk:sa-sdk:<sdk_version_android>@aar'
         compile 'com.google.android.gms:play-services:8.4.0'
     }
 
@@ -35,7 +35,7 @@ Add the SDK as a JAR library
 If you're running an environment which does not support Gradle, then you'll need to add the SDK manually.
 
 
-1) Download `sa-sdk-<sdk_version>.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sa-sdk-<sdk_version>.jar>`_
+1) Download `sa-sdk-<sdk_version_android>.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sa-sdk-<sdk_version_android>.jar>`_
 
 You'll need to add it to your project's **lib** folder, usually **AndroidDemo/app/libs**.
 The libs folder should be located on the same level as the **src** and **build** folders.

@@ -9,7 +9,7 @@ The SuperAwesome Android SDK (Software Development Kit) lets you to easily add C
 =============== ========
 Info            Contents
 =============== ========
-Version         <sdk_version>
+Version         <sdk_version_android>
 Android Support <sdk_androidmin>
 GitHub          <sdk_source>
 Support         `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
