@@ -1,5 +1,5 @@
-Getting started
-===============
+Integrate the SDK
+=================
 
 **Note**: This document assumes:
 
@@ -74,8 +74,8 @@ This will register two new activities and one service for your application, all 
 
 4) At the end you'll also need to add Google Play Services as a dependency to the project, either as a JAR or through Gradle.
 
-Finishing up
-^^^^^^^^^^^^
+Finish up
+^^^^^^^^^
 
 The last thing to do, whether you've added the SuperAwesome SDK through Gradle or the Jar archive is to setup some permissions in the
 AndroidManifest file:

@@ -1,5 +1,5 @@
-Loading ads
-===========
+Load ads
+========
 
 After you've created your Apps and Placements in the dashboard and successfully integrated the SDK in your project,
 the next logical step is to actually start showing ads.
@@ -119,8 +119,8 @@ You'll notice that didLoadAd: has a callback parameter of type **SAAd**. The SAA
 actually display an ad, such as format (image, video), dimensions, click URL, video information, creative details, etc.
 You can find out all details by calling the **print** function, as shown in the example.
 
-Saving an Ad for later use
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Save an ad for later use
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 To save ads for later use, you can save it in a class member variable:
 
@@ -145,8 +145,8 @@ To save ads for later use, you can save it in a class member variable:
         // rest of the implementation ...
     }
 
-Saving ads with orientation change
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Save ads with orientation change
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Android destroys and recreates an activity each time orientation changes, that's why it's important to also save ad data
 when this happens.
@@ -215,8 +215,8 @@ The **SAAd** class implements the **Parceable** protocol, which allows ad data t
         }
     }
 
-Saving multiple Ads for later use
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Save multiple ads for later use
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Finally, if you want to load multiple ads and save them for later use, you can do as such:
 

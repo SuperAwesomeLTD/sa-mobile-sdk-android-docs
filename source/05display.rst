@@ -1,4 +1,4 @@
-Display Ads
+Display ads
 ===========
 
 In the next sections we'll see how to display banners, inline video ads, interstitials and fullscreen video ads.
@@ -60,8 +60,8 @@ Notice that SABannerAd is a subclass of **RelativeLayout** so it can be added on
 (either as shown, in an activity's xml file, or programmatically).
 Also note that you'll have to manually handle re-initializing the banner ad on orientation changes (for now).
 
-Video ads
-^^^^^^^^^
+Inline video ads
+^^^^^^^^^^^^^^^^
 
 To add a **SAVideoAd** object to your activity, first add it in the associated xml file (in this case **/layouts/activity_main.xml**):
 
