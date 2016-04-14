@@ -9,10 +9,10 @@ The SuperAwesome Android SDK (Software Development Kit) lets you to easily add C
 =============== ========
 Info            Contents
 =============== ========
-Version         3.6.5
-Android Support API 11: Android 3.0 (Honeycomb)
-GitHub          https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/tree/develop_v3
-Support         `devsupport@superawesome.tv <mailto:devsupport@superawesome.tv>`_
+Version         <sdk_version>
+Android Support <sdk_androidmin>
+GitHub          <sdk_source>
+Support         `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
 License         `LICENSE.txt <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/develop_v3/LICENSE.txt>`_
 =============== ========
 

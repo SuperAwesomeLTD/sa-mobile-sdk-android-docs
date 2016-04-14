@@ -1,37 +1,31 @@
 import sys
 import os
+
+# project variables
+project = u'iOS SDK'
+copyright = u'<sdk_company>'
+author = u'<sdk_author>'
+version = u'<sdk_version>'
+release = u'<sdk_version>'
+
+# theme config
+html_theme = '<sdk_theme>'
+html_theme_options = {"logo_only":True}
+html_theme_path = ["<sdk_theme_folder>",]
+html_logo = '<sdk_themeres_folder>/logo.png'
+html_context = {
+    'all_versions' : [u'3.6.5'],
+    'domain': '<sdk_aa_domain>',
+    'sourcecode': '<sdk_source>'
+}
+
+# aux vars
 extensions = []
 templates_path = ['_templates']
 source_suffix = '.rst'
 master_doc = 'index'
-project = u'Android SDK'
-copyright = u'2016, SuperAwesome Ltd'
-author = u'Gabriel Coman'
-version = u'3.6.5'
-release = u'3.6.5'
 language = None
 exclude_patterns = []
 show_authors = True
 pygments_style = 'sphinx'
 todo_include_todos = False
-html_theme = 'satheme'
-html_theme_options = {"logo_only":True}
-html_theme_path = ["themes",]
-html_logo = 'themeres/logo.png'
-html_static_path = ['_static']
-htmlhelp_basename = 'SAAndroidSDKdoc'
-latex_elements = {}
-latex_documents = [
-    (master_doc, 'SAAndroidSDK.tex', u'SAAndroidSDK Documentation', u'Gabriel Coman', 'manual'),
-]
-man_pages = [
-    (master_doc, 'saandroidsdk', u'SAAndroidSDK Documentation', [author], 1)
-]
-texinfo_documents = [
-    (master_doc, 'SAAndroidSDK', u'SAAndroidSDK Documentation', author, 'SAAndroidSDK', 'One line description of project.', 'Miscellaneous'),
-]
-html_context = {
-    'all_versions' : [u'3.6.5'],
-    'domain': 'AwesomeAds',
-    'sourcecode': 'https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/tree/develop_v3'
-}

@@ -23,7 +23,7 @@ Just include the following in your module's **build.gradle** file (usually the f
     }
 
     dependencies {
-        compile 'tv.superawesome.sdk:sa-sdk:3.6.5@aar'
+        compile 'tv.superawesome.sdk:sa-sdk:<sdk_version>@aar'
         compile 'com.google.android.gms:play-services:8.4.0'
     }
 
@@ -34,7 +34,8 @@ Add the SDK as a JAR library
 
 If you're running an environment which does not support Gradle, then you'll need to add the SDK manually.
 
-1) Download `sa-sdk-3.6.5.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/raw/develop_v3/rdocs/source/res/sa-sdk-3.6.5.jar>`_
+
+1) Download `sa-sdk-<sdk_version>.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sa-sdk-<sdk_version>.jar>`_
 
 You'll need to add it to your project's **lib** folder, usually **AndroidDemo/app/libs**.
 The libs folder should be located on the same level as the **src** and **build** folders.
@@ -42,7 +43,7 @@ Once it's there, in Android Studio you'll need to select it, right-click it and 
 
 .. image:: img/IMG_03_JAR_1.png
 
-2) Download `sa-sdk-res.zip <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/raw/develop_v3/rdocs/source/res/sa-sdk-res.zip>`_ and unzip it.
+2) Download `sa-sdk-res.zip <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sa-sdk-res.zip>`_ and unzip it.
 
 You'll find two folders inside:
 
