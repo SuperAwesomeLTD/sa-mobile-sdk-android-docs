@@ -1,5 +1,4 @@
-# sa-mobile-sdk-android-docs
-Documentation for the SuperAwesome Android SDK
+# Documentation for the SuperAwesome Android SDK
 
 To contribute:
 * clone the current repository on your machine
