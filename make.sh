@@ -17,7 +17,7 @@ sdk_version_air="3.1.6"
 sdk_version_kws="1.0.0"
 sdk_version_web="2.0.0"
 sdk_version_flash="3.0.0"
-sdk_source="https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/tree/develop_v3"
+sdk_source="https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android"
 sdk_author="Gabriel Coman"
 
 # goto the source
