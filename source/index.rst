@@ -13,7 +13,7 @@ Version         <sdk_version_android>
 Android Support <sdk_androidmin>
 GitHub          <sdk_source>
 Support         `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
-License         `LICENSE.txt <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/develop_v3/LICENSE>`_
+License         `LICENSE <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/develop_v3/LICENSE>`_
 =============== ========
 
 Table of Contents:
