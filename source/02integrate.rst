@@ -77,9 +77,20 @@ This will register two new activities and one service for your application, all 
 Finish up
 ^^^^^^^^^
 
-The last thing to do, whether you've added the SuperAwesome SDK through Gradle or the Jar archive is to setup some permissions in the
-AndroidManifest file:
+The last two thing to do, whether you've added the SuperAwesome SDK through Gradle or the Jar archive is to setup some permissions in the
+AndroidManifest file.
+
+The first is access to Internet:
 
 .. code-block:: xml
 
     <uses-permission android:name="android.permission.INTERNET"/>
+
+and the second, for read/write from the external disk, to take advantage of the SDKs pre-loading and caching of video data:
+
+.. code-block:: xml
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+If you don't add the last two permissions, video ads will be buffered in memory at run-time.
