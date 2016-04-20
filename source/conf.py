@@ -14,7 +14,7 @@ html_theme_options = {"logo_only":True}
 html_theme_path = ["<sdk_theme_folder>",]
 html_logo = '<sdk_themeres_folder>/logo.png'
 html_context = {
-    'all_versions' : [u'3.7.1'],
+    'all_versions' : [u'3.7.2'],
     'domain': '<sdk_aa_domain>',
     'sourcecode': '<sdk_source>'
 }
