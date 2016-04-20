@@ -94,3 +94,49 @@ and the second, for read/write from the external disk, to take advantage of the 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 If you don't add the last two permissions, video ads will be buffered in memory at run-time.
+
+Also, for Android M (6.0) onwards besides adding permissions to the manifest file, you'll need to handle them at run time.
+
+.. code-block:: java
+
+    private final int MY_PERMISSIONS_REQUEST_RESULT = 0;
+
+    // rest of implementation ...
+
+    if (ContextCompat.checkSelfPermission(
+        MainActivity.this,
+        Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
+    {
+
+        // Should we show an explanation?
+        if (ActivityCompat.shouldShowRequestPermissionRationale(
+            MainActivity.this,
+            Manifest.permission.READ_EXTERNAL_STORAGE)) {
+
+            // show some message
+        }
+        else {
+
+            // request permission
+            ActivityCompat.requestPermissions(MainActivity.this,
+                new String[]{ Manifest.permission.READ_EXTERNAL_STORAGE },
+                MY_PERMISSIONS_REQUEST_READ_CONTACTS);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_RESULT: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0 &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    // permission granted
+                } else {
+                    // permission denied
+                }
+                return;
+            }
+        }
+    }
