@@ -56,11 +56,11 @@ You'll find two folders inside:
 
 .. code-block:: xml
 
-    <activity android:name="tv.superawesome.sdk.views.SAVideoActivity$SAVideoActivityInner"
+    <activity android:name="tv.superawesome.sdk.views.SAFullscreenVideoAd$SAFullscreenVideoAdActivity"
               android:label="SAVideoActivity"
               android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"></activity>
 
-    <activity android:name="tv.superawesome.sdk.views.SAInterstitialActivity$SAInterstitialActivityInner"
+    <activity android:name="tv.superawesome.sdk.views.SAInterstitialAd$SAInterstitialAdActivity"
               android:label="SAInterstitialActivity"
               android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
               android:configChanges="keyboardHidden|orientation|screenSize"></activity>
