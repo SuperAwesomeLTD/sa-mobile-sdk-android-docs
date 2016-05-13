@@ -12,7 +12,7 @@ in our app.
     import tv.superawesome.*;
 
     public class MainActivity extends Activity
-                              implements SALoaderListener {
+                              implements SALoaderInterface {
 
         // private SALoader class member
         private SALoader loader = null;
@@ -25,8 +25,8 @@ in our app.
         // display objects
         private SABannerAd banner = null;
         private SAVideoAd video = null;
-        private SAVideoActivity fvideo = null;
-        private SAInterstitialActivity interstitial = null;
+        private SAFullscreenVideoAd fvideo = null;
+        private SAInterstitialAd interstitial = null;
 
         // rest of the implementation
     }
@@ -98,7 +98,7 @@ Interstitial ads are started the following way:
 
     public void showInterstitial(View v) {
         if (interstitialAdData != null){
-            interstitial = new SAInterstitialActivity(MainActivity.this);
+            interstitial = new SAInterstitialAd(MainActivity.this);
             interstitial.setAd(interstitialAdData);
             interstitial.play();
         }
@@ -115,7 +115,7 @@ Fullscreen video ads are started the following way:
 
     public void showVideo(View v) {
         if (videoAdData != null) {
-            fvideo = new SAVideoActivity(MainActivity.this);
+            fvideo = new SAFullscreenVideoAd(MainActivity.this);
             fvideo.setAd(videoAdData);
             fvideo.setShouldAutomaticallyCloseAtEnd(true);
             fvideo.setShouldShowCloseButton(true);

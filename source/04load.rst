@@ -52,19 +52,19 @@ When it's done, it calls two important callback methods, **didLoadAd(SAAd loaded
 to notify you of either success or failure.
 In order to use these callbacks:
 
-* your MainActivity class must implement the **SALoaderListener**:
+* your MainActivity class must implement the **SALoaderInterface**:
 
 .. code-block:: java
 
     public class MainActivity extends Activity
-                              implements SALoaderListener
+                              implements SALoaderInterface
 
 * the MainActivity must be set as delegate for the SALoader object created earlier (replace **null** with **this** in *SALoader.loadAd(30471, null)*):
 
 .. code-block:: java
 
     public class MainActivity extends Activity
-                              implements SALoaderListener {
+                              implements SALoaderInterface {
 
         // private SALoader class member
         private SALoader loader = null;
@@ -99,7 +99,7 @@ In order to use these callbacks:
 .. code-block:: java
 
     public class MainActivity extends Activity
-                              implements SALoaderListener {
+                              implements SALoaderInterface {
 
         // rest of the implementation ...
 
@@ -127,7 +127,7 @@ To save ads for later use, you can save it in a class member variable:
 .. code-block:: java
 
     public class MainActivity extends Activity
-                              implements SALoaderListener {
+                              implements SALoaderInterface {
 
         // member variable that will retain the
         // saved ad, once that's loaded
@@ -155,7 +155,7 @@ The **SAAd** class implements the **Parceable** protocol, which allows ad data t
 .. code-block:: java
 
     public class MainActivity extends Activity
-                              implements SALoaderListener {
+                              implements SALoaderInterface {
 
         // private SALoader class member
         private SALoader loader = null;
@@ -223,7 +223,7 @@ Finally, if you want to load multiple ads and save them for later use, you can d
 .. code-block:: java
 
     public class MainActivity extends Activity
-                              implements SALoaderListener {
+                              implements SALoaderInterface {
 
         // private SALoader class member
         private SALoader loader = null;

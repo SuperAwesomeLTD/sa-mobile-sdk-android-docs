@@ -27,17 +27,11 @@ few lines of code.
 
 .. code-block:: java
 
-    // other imports ...
-
-    import tv.superawesome.sdk.SuperAwesome;
-    import tv.superawesome.sdk.loader.SALoader;
-    import tv.superawesome.sdk.loader.SALoaderListener;
-    import tv.superawesome.sdk.models.SAAd;
-    import tv.superawesome.sdk.views.SABannerAd;
+    // imports ...
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener {
+           implements SALoaderInterface {
 
         private SALoader loader = null;
         private SAAd bannerAdData = null;
@@ -134,24 +128,14 @@ multiple callbacks.
 
 .. code-block:: java
 
-    // other imports ...
-
-    import tv.superawesome.sdk.SuperAwesome;
-    import tv.superawesome.sdk.listeners.SAAdListener;
-    import tv.superawesome.sdk.listeners.SAParentalGateListener;
-    import tv.superawesome.sdk.listeners.SAVideoAdListener;
-    import tv.superawesome.sdk.loader.SALoader;
-    import tv.superawesome.sdk.loader.SALoaderListener;
-    import tv.superawesome.sdk.models.SAAd;
-    import tv.superawesome.sdk.views.SAInterstitialActivity;
-    import tv.superawesome.sdk.views.SAVideoActivity;
+    // imports ...
 
     public class MainActivity
             extends Activity
-            implements SALoaderListener,
-                        SAAdListener,
-                        SAParentalGateListener,
-                        SAVideoAdListener {
+            implements SALoaderInterface,
+                        SAAdInterface,
+                        SAParentalGateInterface,
+                        SAVideoAdInterface {
 
         // private SALoader class member
         private SALoader loader = null;
@@ -161,8 +145,8 @@ multiple callbacks.
         private SAAd videoAdData = null;
 
         // the two ads to be displayed
-        private SAInterstitialActivity interstitial = null;
-        private SAVideoActivity fvideo = null;
+        private SAInterstitialAd interstitial = null;
+        private SAFullscreenVideoAd fvideo = null;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -227,7 +211,7 @@ multiple callbacks.
 
         public void playVideo(View v){
             if (videoAdData != null) {
-                fvideo = new SAVideoActivity(MainActivity.this);
+                fvideo = new SAFullscreenVideoAd(MainActivity.this);
                 fvideo.setAd(videoAdData);
                 fvideo.setShouldAutomaticallyCloseAtEnd(true);
                 fvideo.setShouldShowCloseButton(true);
@@ -240,7 +224,7 @@ multiple callbacks.
         }
 
         //
-        // SAAdListener implementation
+        // SAAdInterface implementation
 
         @Override
         public void adWasShown(int placementId) {
@@ -257,7 +241,7 @@ multiple callbacks.
         public void adHasIncorrectPlacement(int placementId) {}
 
         //
-        // SAParentalGateListener implementation
+        // SAParentalGateInterface implementation
 
         @Override
         public void parentalGateWasCanceled(int placementId) {}
@@ -267,7 +251,7 @@ multiple callbacks.
         public void parentalGateWasSucceded(int placementId) {}
 
         //
-        // SAVideoAdListener implementation
+        // SAVideoAdInterface implementation
 
 
         @Override

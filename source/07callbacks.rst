@@ -2,21 +2,21 @@ Ad callbacks
 ============
 
 Once an ad starts playing, it will send back callbacks to notify you that it has finished different lifecycle activities.
-To respond to them we'll use a similar listener / delegate pattern as with SALoaderListener.
+To respond to them we'll use a similar listener / delegate pattern as with SALoaderInterface.
 
 Standard ad callbacks
 ^^^^^^^^^^^^^^^^^^^^^
 
 To catch standard ad callbacks:
 
-* your Activity must implement the **SAAdListener**:
+* your Activity must implement the **SAAdInterface**:
 
 .. code-block:: java
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAAdListener {
+           implements SALoaderInterface,
+                      SAAdInterface {
 
         // class member variables
         private SALoader loader = null;
@@ -33,8 +33,8 @@ To catch standard ad callbacks:
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAAdListener {
+           implements SALoaderInterface,
+                      SAAdInterface {
 
         // rest of the implementation ...
 
@@ -48,14 +48,14 @@ To catch standard ad callbacks:
         }
     }
 
-* your Activity must implement the callback methods specified by SAAdListener
+* your Activity must implement the callback methods specified by SAAdInterface
 
 .. code-block:: java
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAAdListener {
+           implements SALoaderInterface,
+                      SAAdInterface {
 
         // rest of the implementation ...
 
@@ -95,14 +95,14 @@ Parental gate callbacks
 
 To catch parental gate callbacks:
 
-* Your Activity must implement the **SAParentalGateListener**:
+* Your Activity must implement the **SAParentalGateInterface**:
 
 .. code-block:: java
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAParentalGateListener {
+           implements SALoaderInterface,
+                      SAParentalGateInterface {
 
         // class member variables
         private SALoader loader = null;
@@ -119,8 +119,8 @@ To catch parental gate callbacks:
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAParentalGateListener {
+           implements SALoaderInterface,
+                      SAParentalGateInterface {
 
         // rest of the implementation ...
 
@@ -135,14 +135,14 @@ To catch parental gate callbacks:
         }
     }
 
-* your Activity must implement the callback methods specified by SAAdListener
+* your Activity must implement the callback methods specified by SAAdInterface
 
 .. code-block:: java
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAParentalGateListener {
+           implements SALoaderInterface,
+                      SAParentalGateInterface {
 
         // rest of the implementation ...
 
@@ -173,14 +173,14 @@ Video callbacks
 
 To catch video ad callbacks (available only for SAVideoAd and SAVideoActivity objects):
 
-* Your Activity must implement the **SAVideoAdListener**:
+* Your Activity must implement the **SAVideoAdInterface**:
 
 .. code-block:: java
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAVideoAdListener {
+           implements SALoaderInterface,
+                      SAVideoAdInterface {
 
         // class member variables
         private SALoader loader = null;
@@ -197,8 +197,8 @@ To catch video ad callbacks (available only for SAVideoAd and SAVideoActivity ob
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAVideoAdListener {
+           implements SALoaderInterface,
+                      SAVideoAdInterface {
 
         // rest of the implementation ...
 
@@ -212,14 +212,14 @@ To catch video ad callbacks (available only for SAVideoAd and SAVideoActivity ob
         }
     }
 
-* your Activity must implement the callback methods specified by SAAdListener
+* your Activity must implement the callback methods specified by SAAdInterface
 
 .. code-block:: java
 
     public class MainActivity
            extends Activity
-           implements SALoaderListener,
-                      SAVideoAdListener {
+           implements SALoaderInterface,
+                      SAVideoAdInterface {
 
         // rest of the implementation ...
 
