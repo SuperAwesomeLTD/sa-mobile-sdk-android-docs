@@ -80,6 +80,11 @@ Then in your activity, let's also assume we have a button linked to the **showIn
         if (videoAdData != null) {
             video = (SAVideoAd) findViewById(R.id.myvideo);
             video.setAd(videoAdData);
+
+            // toggles a small video "click" button
+            // instead of the whole video surface
+            video.shouldShowSmallClickButton = true;
+
             video.play();
         }
     }
@@ -100,6 +105,11 @@ Interstitial ads are started the following way:
         if (interstitialAdData != null){
             interstitial = new SAInterstitialAd(MainActivity.this);
             interstitial.setAd(interstitialAdData);
+
+            // locks orientation
+            interstitial.setShouldLockOrientation(true);
+            interstitial.setLockOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
             interstitial.play();
         }
     }
@@ -119,8 +129,19 @@ Fullscreen video ads are started the following way:
             fvideo.setAd(videoAdData);
             fvideo.setShouldAutomaticallyCloseAtEnd(true);
             fvideo.setShouldShowCloseButton(true);
+
+            // toggles a small video "click" button
+            // instead of the whole video surface
+            fvideo.shouldShowSmallClickButton = true;
+
+            // locks orientation
             fvideo.setShouldLockOrientation(true);
             fvideo.setLockOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+
+            // toggles a small video "click" button
+            // instead of the whole video surface
+            video.shouldShowSmallClickButton = true;
+
             fvideo.play();
         }
     }
