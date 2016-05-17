@@ -83,7 +83,7 @@ Then in your activity, let's also assume we have a button linked to the **showIn
 
             // toggles a small video "click" button
             // instead of the whole video surface
-            video.shouldShowSmallClickButton = true;
+            video.setShouldShowSmallClickButton(true);
 
             video.play();
         }
@@ -140,7 +140,7 @@ Fullscreen video ads are started the following way:
 
             // toggles a small video "click" button
             // instead of the whole video surface
-            video.shouldShowSmallClickButton = true;
+            video.setShouldShowSmallClickButton(true);
 
             fvideo.play();
         }
