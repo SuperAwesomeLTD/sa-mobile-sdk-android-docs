@@ -6,13 +6,36 @@ without having to directly use the AwesomeAds SDK, you can follow the steps belo
 
 1) Add the SuperAwesome MoPub adapters to your app:
 
-Download the `samopub.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/samopub.jar>`_ archive, which you'll need to add to your project, in order to add three adapters classes:
+You can either change your module's **build.gradle** file (usually the file under MyApplication/app/) to
+the following format:
+
+.. code-block:: shell
+
+    repositories {
+        maven {
+            url  "http://dl.bintray.com/sharkofmirkwood/maven"
+        }
+    }
+
+    dependencies {
+        // standard SA SDK and MoPub plugins
+        compile 'tv.superawesome.sdk:samopub:<sdk_version_android>'
+
+        // optional - for MOAT integration
+        compile 'tv.superawesome.sdk:samoat:<sdk_version_android>'
+
+        // optional - for Google Play Integration
+        compile 'com.google.android.gms:play-services:8.4.0'
+    }
+
+This will download both the standard SuperAwesome SDK core as well as the associated MoPub adaptors.
+
+If you don't want to use Gradle at all, you can check out the **Integrate the SDK** section of this document
+dealing with adding the SDK through a .jar archive, and once that's done you can download the `samopub.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/samopub.jar>`_ archive, which you'll need to add to your project, in order to add three adapter classes:
 
   * `SuperAwesomeBannerCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeBannerCustomEvent.java>`_
   * `SuperAwesomeInterstitialCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeInterstitialCustomEvent.java>`_
   * `SuperAwesomeRewardedVideoCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeRewardedVideoCustomEvent.java>`_
-
-If you don't want to use the samopub.jar file, you can download each .java file and add it to your project individually. You'll need to place them in a folder hierarchy as **com/mopub/sa/mobileads**, inside your **/app/src/main/java** folder.
 
 2) Setup a MoPub custom network
 

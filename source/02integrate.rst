@@ -23,7 +23,13 @@ Just include the following in your module's **build.gradle** file (usually the f
     }
 
     dependencies {
-        compile 'tv.superawesome.sdk:sa-sdk:<sdk_version_android>@aar'
+        // required
+        compile 'tv.superawesome.sdk:sa-sdk:<sdk_version_android>'
+
+        // optional - for MOAT integration
+        compile 'tv.superawesome.sdk:samoat:<sdk_version_android>'
+
+        // optional - for Google Play Integration
         compile 'com.google.android.gms:play-services:8.4.0'
     }
 
