@@ -21,9 +21,6 @@ the following format:
         // standard SA SDK and MoPub plugins
         compile 'tv.superawesome.sdk:samopub:<sdk_version_android>'
 
-        // optional - for MOAT integration
-        compile 'tv.superawesome.sdk:samoat:<sdk_version_android>'
-
         // optional - for Google Play Integration
         compile 'com.google.android.gms:play-services:8.4.0'
     }
