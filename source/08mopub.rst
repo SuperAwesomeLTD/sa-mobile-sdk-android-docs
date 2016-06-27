@@ -13,16 +13,12 @@ the following format:
 
     repositories {
         maven {
-            url  "http://dl.bintray.com/sharkofmirkwood/maven"
+            url  "http://dl.bintray.com/gabrielcoman/maven"
         }
     }
 
     dependencies {
-        // standard SA SDK and MoPub plugins
         compile 'tv.superawesome.sdk:samopub:<sdk_version_android>'
-
-        // optional - for Google Play Integration
-        compile 'com.google.android.gms:play-services:8.4.0'
     }
 
 This will download both the standard SuperAwesome SDK core as well as the associated MoPub adaptors.
