@@ -24,7 +24,7 @@ the following format:
 This will download both the standard SuperAwesome SDK core as well as the associated MoPub adaptors.
 
 If you don't want to use Gradle at all, you can check out the **Integrate the SDK** section of this document
-dealing with adding the SDK through a .jar archive, and once that's done you can download the `samopub.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/samopub.jar>`_ archive, which you'll need to add to your project, in order to add three adapter classes:
+dealing with adding the SDK through a .jar archive, and once that's done you can download the `samopub.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/samopub.jar?raw=true>`_ archive, which you'll need to add to your project, in order to add three adapter classes:
 
   * `SuperAwesomeBannerCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeBannerCustomEvent.java>`_
   * `SuperAwesomeInterstitialCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeInterstitialCustomEvent.java>`_

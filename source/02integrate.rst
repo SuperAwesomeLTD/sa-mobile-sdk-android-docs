@@ -34,19 +34,19 @@ If you're running an environment which does not support Gradle, then you'll need
 
 1) Download the following jar files:
 
- * `saadloader.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/saadloader.jar>`_
- * `saevents.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/saevents.jar>`_
- * `sajsonparser.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sajsonparser.jar>`_
- * `samodelspace.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/samodelspace.jar>`_
- * `sautils.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sautils.jar>`_
- * `savastparser.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/savastparser.jar>`_
- * `savideoplayer.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/savideoplayer.jar>`_
- * `sawebplayer.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sawebplayer.jar>`_
- * `sa-sdk-<sdk_version_android>.jar <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sa-sdk-<sdk_version_android>.jar>`_
+ * `saadloader.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saadloader.jar?raw=true>`_
+ * `saevents.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saevents.jar?raw=true>`_
+ * `sajsonparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sajsonparser.jar?raw=true>`_
+ * `samodelspace.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/samodelspace.jar?raw=true>`_
+ * `sautils.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sautils.jar?raw=true>`_
+ * `savastparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/savastparser.jar?raw=true>`_
+ * `savideoplayer.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/savideoplayer.jar?raw=true>`_
+ * `sawebplayer.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sawebplayer.jar?raw=true>`_
+ * `sa-sdk-<sdk_version_android>.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sa-sdk-<sdk_version_android>.jar?raw=true>`_
 
 And add them as library dependencies in your Android Studio or Eclipse project.
 
-2) Download `sa-sdk-res.zip <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android-docs/raw/master/source/res/sa-sdk-res.zip>`_ and unzip it.
+2) Download `sa-sdk-res.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sa-sdk-res.zip?raw=true>`_ and unzip it.
 
 You'll find two folders inside:
 
@@ -90,7 +90,8 @@ and the second, for read/write from the external disk, to take advantage of the 
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
 If you don't add the last two permissions, video ads will be buffered in memory at run-time, but not pre-downloaded.
 
 Also, for Android M (6.0) onwards besides adding permissions to the manifest file, you'll need to handle them at run time.
