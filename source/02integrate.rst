@@ -35,6 +35,7 @@ If you're running an environment which does not support Gradle, then you'll need
 1) Download the following jar files:
 
  * `saadloader.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saadloader.jar?raw=true>`_
+ * `sanetwork.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sanetwork.jar?raw=true>`_
  * `saevents.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saevents.jar?raw=true>`_
  * `sajsonparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sajsonparser.jar?raw=true>`_
  * `samodelspace.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/samodelspace.jar?raw=true>`_
@@ -66,7 +67,7 @@ You'll find two folders inside:
               android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
               android:configChanges="keyboardHidden|orientation|screenSize"></activity>
 
-    <service android:name="tv.superawesome.lib.sautils.SAAsyncTask$SAAsync" android:exported="false"/>
+    <service android:name="tv.superawesome.lib.sanetwork.asynctask.SAAsyncTask$SAAsync" android:exported="false"/>
 
 This will register two new activities and one service for your application, all needed by the SDK.
 
@@ -91,7 +92,7 @@ and the second, for read/write from the external disk, to take advantage of the 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+
 If you don't add the last two permissions, video ads will be buffered in memory at run-time, but not pre-downloaded.
 
 Also, for Android M (6.0) onwards besides adding permissions to the manifest file, you'll need to handle them at run time.
