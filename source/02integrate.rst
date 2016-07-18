@@ -39,6 +39,7 @@ If you're running an environment which does not support Gradle, then you'll need
  * `saevents.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saevents.jar?raw=true>`_
  * `sajsonparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sajsonparser.jar?raw=true>`_
  * `samodelspace.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/samodelspace.jar?raw=true>`_
+ * `sasession.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sasession.jar?raw=true>`_
  * `sautils.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sautils.jar?raw=true>`_
  * `savastparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/savastparser.jar?raw=true>`_
  * `savideoplayer.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/savideoplayer.jar?raw=true>`_
@@ -71,72 +72,11 @@ You'll find two folders inside:
 
 This will register two new activities and one service for your application, all needed by the SDK.
 
-4) At the end you'll also need to add Google Play Services as a dependency to the project, either as a JAR or through Gradle.
-
-Finish up
-^^^^^^^^^
-
-The last two thing to do, whether you've added the SuperAwesome SDK through Gradle or the Jar archive is to setup some permissions in the
-AndroidManifest file.
-
-The first is access to Internet:
+4) Add the following permissions to your AndroidManifest.xml file:
 
 .. code-block:: xml
 
     <uses-permission android:name="android.permission.INTERNET"/>
-
-and the second, for read/write from the external disk, to take advantage of the SDKs pre-loading and caching of video data:
-
-.. code-block:: xml
-
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-If you don't add the last two permissions, video ads will be buffered in memory at run-time, but not pre-downloaded.
-
-Also, for Android M (6.0) onwards besides adding permissions to the manifest file, you'll need to handle them at run time.
-
-.. code-block:: java
-
-    private final int MY_PERMISSIONS_REQUEST_RESULT = 0;
-
-    // rest of implementation ...
-
-    if (ContextCompat.checkSelfPermission(
-        MainActivity.this,
-        Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED)
-    {
-
-        // Should we show an explanation?
-        if (ActivityCompat.shouldShowRequestPermissionRationale(
-            MainActivity.this,
-            Manifest.permission.READ_EXTERNAL_STORAGE)) {
-
-            // show some message
-        }
-        else {
-
-            // request permission
-            ActivityCompat.requestPermissions(MainActivity.this,
-                new String[]{ Manifest.permission.READ_EXTERNAL_STORAGE },
-                MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[] grantResults) {
-        switch (requestCode) {
-            case MY_PERMISSIONS_REQUEST_RESULT: {
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 &&
-                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // permission granted
-                } else {
-                    // permission denied
-                }
-                return;
-            }
-        }
-    }
+5) At the end you'll also need to add Google Play Services as a dependency to the project, either as a JAR or through Gradle.
