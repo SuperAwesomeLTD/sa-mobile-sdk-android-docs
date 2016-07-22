@@ -12,50 +12,93 @@ Add the SDK through Gradle
 
 The simplest way of installing the AwesomeAds SDK in Android Studio is to download the AAR library through Gradle.
 
-Just include the following in your module's **build.gradle** file (usually the file under MyApplication/app/):
+Add the SuperAwesome repository
+-------------------------------
+
+The first step is to include the following Maven repository in your module's **build.gradle** file (usually the file under MyApplication/app/):
 
 .. code-block:: shell
 
     repositories {
         maven {
-            url  "http://dl.bintray.com/gabrielcoman/maven"
+            url  'http://dl.bintray.com/gabrielcoman/maven'
         }
     }
 
+Add the full SuperAwesome SDK
+-----------------------------
+
+Next you need to add the full SuperAwesome Android SDK as a dependency. The **full** version will contain everything you
+need in order to load and display banner, interstitial and video ads as well as the 3rd party `Moat Analytics <https://moat.com/analytics>`_
+module.
+
+.. code-block:: shell
+
     dependencies {
-        compile 'tv.superawesome.sdk:sa-sdk:<sdk_version_android>'
+        compile 'tv.superawesome.sdk:superawesome:<sdk_version_android>'
     }
+
+Add the base SuperAwesome SDK
+-----------------------------
+
+Alternatively, if you want a base version of the SDK, you can declare the following dependency:
+
+.. code-block:: shell
+
+    dependencies {
+        compile 'tv.superawesome.sdk:superawesome-base:<sdk_version_android>'
+    }
+
+This has the same functionality as the full version, but lacks the Moat Analytics module.
 
 Add the SDK as a JAR library
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you're running an environment which does not support Gradle, then you'll need to add the SDK manually.
 
+You can download one of two zip archives:
 
-1) Download the following jar files:
+ * `SuperAwesomeSDK-<sdk_version_android>.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.full.jars.zip?raw=true>`_
+ * `SuperAwesomeSDK-<sdk_version_android>.Android.base.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.base.jars.zip?raw=true>`_
 
- * `saadloader.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saadloader.jar?raw=true>`_
- * `sanetwork.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sanetwork.jar?raw=true>`_
- * `saevents.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/saevents.jar?raw=true>`_
- * `sajsonparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sajsonparser.jar?raw=true>`_
- * `samodelspace.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/samodelspace.jar?raw=true>`_
- * `sasession.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sasession.jar?raw=true>`_
- * `sautils.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sautils.jar?raw=true>`_
- * `savastparser.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/savastparser.jar?raw=true>`_
- * `savideoplayer.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/savideoplayer.jar?raw=true>`_
- * `sawebplayer.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sawebplayer.jar?raw=true>`_
- * `sa-sdk-<sdk_version_android>.jar <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sa-sdk-<sdk_version_android>.jar?raw=true>`_
+Once downloaded and extracted, you can follow these steps:
 
-And add them as library dependencies in your Android Studio or Eclipse project.
+Add SDK components
+-------------------
 
-2) Download `sa-sdk-res.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/android_build/sa-sdk-res.zip?raw=true>`_ and unzip it.
+The archives will contain a number of .jar files, representing the components of the SDK:
 
-You'll find two folders inside:
+ * saadloader.jar
+ * sanetwork.jar
+ * saevents.jar
+ * sajsonparser.jar
+ * samodelspace.jar
+ * sasession.jar
+ * sautils.jar
+ * savastparser.jar
+ * savideoplayer.jar
+ * sawebplayer.jar
+ * superawesome-<sdk_version_android>.jar
 
-* drawable: containing SDK PNG files; copy the PNG files inside your projects' **drawable** folder
-* layout: containing SDK layout XML files; copy the XML files inside your projects' **layout** folder
+Additionally, the **full** version will also contain:
 
-3) Add the following items in your AndroidManifest file, under the Application tag:
+ * samoatevents.jar
+ * moatlib.jar
+
+Add them to the **lib** folder in your Android project.
+
+Add resources
+-------------
+
+There will also be a **superawesome-res** folder containing two subfolders:
+
+ * drawable: containing SDK PNG files; copy the PNG files inside your projects' **drawable** folder
+ * layout: containing SDK layout XML files; copy the XML files inside your projects' **layout** folder
+
+Change manifest file
+--------------------
+
+Add the following items in your *AndroidManifest.xml* file, under the Application tag:
 
 .. code-block:: xml
 
@@ -72,11 +115,14 @@ You'll find two folders inside:
 
 This will register two new activities and one service for your application, all needed by the SDK.
 
-4) Add the following permissions to your AndroidManifest.xml file:
+Also, add the following permissions to your AndroidManifest.xml file:
 
 .. code-block:: xml
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-5) At the end you'll also need to add Google Play Services as a dependency to the project, either as a JAR or through Gradle.
+Extra
+-----
+
+At the end you'll also need to add Google Play Services as a dependency to the project, either as a .jar or through Gradle.
