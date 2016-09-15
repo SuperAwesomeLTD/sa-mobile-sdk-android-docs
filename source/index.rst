@@ -22,8 +22,8 @@ Table of Contents:
    :maxdepth: 2
 
    Initial setup <01dashboard>
-   Integrate the SDK <02integrate>
-   Configure the SDK <03config>
+   Add the SDK through Gradle <02addgradle>
+   Add the SDK as a JAR library <03addjar>
    Banner Ads <04banner>
    Interstitial Ads <05interstitial>
    Video Ads <06video>

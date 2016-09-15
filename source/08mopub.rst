@@ -68,11 +68,11 @@ Notice these are identical to the names of the files you downloaded in step one.
 .. code-block:: shell
 
     {
-    	"placementId": 5692,
+    	"placementId": 30473,
     	"isTestEnabled": true,
     	"isParentalGateEnabled": true,
-        // only for video
+        "orientation": "ANY" or "PORTRAIT" or "LANDSCAPE",
         "shouldShowCloseButton": false,
         "shouldAutomaticallyCloseAtEnd": true,
-        "orientation": "ANY" or "LANDSCAPE" or "PORTRAIT"
+        "shouldShowSmallClickButton": true or false
     }

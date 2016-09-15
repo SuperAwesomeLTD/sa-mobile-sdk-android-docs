@@ -12,33 +12,22 @@ The following block of code creates and loads a video ad:
             super.onCreate (savedInstanceState);
             setContentView (R.layout.activity_main);
 
-            // Enabling test mode will load
-            // one of our test ads
-            // By default it is disabled
+            // to display test ads
             SAVideoAd.enableTestMode ();
 
-            // The parental gate requires users to
-            // perform a simple math operation when
-            // clicking on an ad
+            // ask users to add two numbers when clicking on an ad
             SAVideoAd.enableParentalGate ();
 
-            // You can also specify a certain
-            // orientation for your interstitial ad
+            // lock orientation to portrait or landscape
             SAVideoAd.setOrientationLandscape ();
 
-            // You can also enable or disable
-            // a close button for the video
+            // enable or disable a close button
             SAVideoAd.disableCloseButton ();
 
-            // Or you can instruct it to not close
-            // at the end of the video (if you
-            // want to present some kind of reward,
-            // for example)
+            // enable or disable auto-closing at the end
             SAVideoAd.disableCloseAtEnd ();
 
-            // Finally you can start the loading
-            // process by telling the SDK to load an
-            // ad for a certain placement
+            // start loading ad data for a placement
             SAVideoAd.load (30479);
         }
     }
@@ -49,11 +38,10 @@ Once you've loaded an ad, you can also display it:
 
     public void onClick (View view) {
 
-        // It's good practice to check first
-        // if there is an ad available
+        // check if ad is loaded
         if (SAVideoAd.hasAdAvailable (30479)) {
 
-            // if all is OK you may play the ad
+            // display the ad
             SAVideoAd.play (30479, MainActivity.this);
         }
     }

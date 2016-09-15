@@ -7,12 +7,6 @@ Simple example
 The first example shows how you can add a banner ad in your app with just a
 few lines of code.
 
-**AndroidManifest.xml**
-
-.. code-block:: xml
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-
 **activity_main.xml**
 
 .. code-block:: xml
