@@ -5,8 +5,9 @@ If you're running an environment which does not support Gradle, then you'll need
 
 You can download one of two zip archives:
 
- * `SuperAwesomeSDK-<sdk_version_android>.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.full.jars.zip?raw=true>`_
- * `SuperAwesomeSDK-<sdk_version_android>.Android.base.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.base.jars.zip?raw=true>`_
+1) `SuperAwesomeSDK-<sdk_version_android>.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.full.jars.zip?raw=true>`_
+
+2) `SuperAwesomeSDK-<sdk_version_android>.Android.base.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.base.jars.zip?raw=true>`_
 
 Once downloaded and extracted, you can follow these steps:
 
@@ -15,11 +16,9 @@ Add them to the **lib** folder in your Android project.
 
 There will also be a **superawesome-res** folder containing two subfolders:
 
- * drawable: containing SDK PNG files; copy the PNG files inside your projects' **drawable** folder
- * layout: containing SDK layout XML files; copy the XML files inside your projects' **layout** folder
+1) drawable: containing SDK PNG files; copy the PNG files inside your projects' **drawable** folder
 
-Change manifest file
-^^^^^^^^^^^^^^^^^^^^
+2) layout: containing SDK layout XML files; copy the XML files inside your projects' **layout** folder
 
 Add the following items in your *AndroidManifest.xml* file, under the Application tag:
 
