@@ -51,9 +51,6 @@ Also, add the following permissions to your AndroidManifest.xml file:
 
 At the end you'll also need to add Google Play Services as a dependency to the project, either as a .jar or through Gradle.
 
-Import the SDK
-^^^^^^^^^^^^^^
-
 Once you've integrated the SuperAwesome SDK, you can access all functionality by including the SuperAwesome library:
 
 .. code-block:: java

@@ -33,9 +33,6 @@ Alternatively, if you want a base version of the SDK, you can declare the follow
 
 This has the same functionality as the full version, but lacks the Moat Analytics module.
 
-Import the SDK
-^^^^^^^^^^^^^^
-
 Once you've integrated the SuperAwesome SDK, you can access all functionality by including the SuperAwesome library:
 
 .. code-block:: java
