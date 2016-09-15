@@ -74,6 +74,5 @@ Notice these are identical to the names of the files you downloaded in step one.
         // only for video
         "shouldShowCloseButton": false,
         "shouldAutomaticallyCloseAtEnd": true,
-        "shouldLockOrientation": true,
-        "lockOrientation": "LANDSCAPE" or "PORTRAIT"
+        "orientation": "ANY" or "LANDSCAPE" or "PORTRAIT"
     }

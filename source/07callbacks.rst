@@ -1,265 +1,32 @@
 Ad callbacks
 ============
 
-Once an ad starts playing, it will send back callbacks to notify you that it has finished different lifecycle activities.
-To respond to them we'll use a similar listener / delegate pattern as with SALoaderInterface.
-
-Standard ad callbacks
-^^^^^^^^^^^^^^^^^^^^^
-
-To catch standard ad callbacks:
-
-* your Activity must implement the **SAAdInterface**:
+Banner ads, interstitials and video ads all send a number of callbacks to inform you of important lifecycle events.
 
 .. code-block:: java
 
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAAdInterface {
-
-        // class member variables
-        private SALoader loader = null;
-        private SAAd bannerAdData = null;
-        private SABannerAd bannerAd = null;
-
-        // rest of the implementation ...
-
-    }
-
-* the Activity must be set as delegate for your display objects:
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAAdInterface {
-
-        // rest of the implementation ...
-
-        public void showBanner(View v){
-            if (bannerAdData != null) {
-                banner = (SABannerAd) findViewById(R.id.mybanner);
-                banner.setAd(bannerAdData);
-                banner.setAdListener(this);
-                banner.play();
+    SAVideoAd.setListener (new SAInterface() {
+        @Override
+        public void onEvent(int placementId, SAEvent event) {
+            switch (event) {
+                case adLoaded:
+                    // called when an ad has finished loading
+                    break;
+                case adFailedToLoad:
+                    // called when an ad could not be loaded
+                    break;
+                case adShown:
+                    // called when an ad is first shown
+                    break;
+                case adFailedToShow:
+                    // called when an ad fails to show
+                    break;
+                case adClicked:
+                    // called when an ad is clicked
+                    break;
+                case adClosed:
+                    // called when a fullscreen ad is closed
+                    break;
             }
         }
-    }
-
-* your Activity must implement the callback methods specified by SAAdInterface
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAAdInterface {
-
-        // rest of the implementation ...
-
-        @Override
-        public void adWasShown(int placementId) {
-            // this function is called when the ad
-            // is shown on the screen
-        }
-
-        @Override
-        public void adFailedToShow(int placementId) {
-            // this function is called when the ad failed to show
-        }
-
-        @Override
-        public void adWasClosed(int placementId) {
-            // this function is called when an ad is closed;
-            // only applies to fullscreen ads
-            // like interstitials and fullscreen videos
-        }
-
-        @Override
-        public void adWasClicked(int placementId) {
-            // this function is called when an ad is clicked
-        }
-
-        @Override
-        public void adHasIncorrectPlacement(int placementId) {
-            // only called when setting an SAAd object
-            // containing video data for a
-            // banner type display object (or similar)
-        }
-    }
-
-Parental gate callbacks
-^^^^^^^^^^^^^^^^^^^^^^^
-
-To catch parental gate callbacks:
-
-* Your Activity must implement the **SAParentalGateInterface**:
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAParentalGateInterface {
-
-        // class member variables
-        private SALoader loader = null;
-        private SAAd bannerAdData = null;
-        private SABannerAd bannerAd = null;
-
-        // rest of the implementation ...
-
-    }
-
-* the Activity must be set as delegate for your display objects:
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAParentalGateInterface {
-
-        // rest of the implementation ...
-
-        public void showBanner(View v){
-            if (bannerAdData != null) {
-                banner = (SABannerAd) findViewById(R.id.mybanner);
-                banner.setAd(bannerAdData);
-                banner.setIsParentalGateEnabled(true);
-                banner.setParentalGateListener(this);
-                banner.play();
-            }
-        }
-    }
-
-* your Activity must implement the callback methods specified by SAAdInterface
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAParentalGateInterface {
-
-        // rest of the implementation ...
-
-        @Override
-        public void parentalGateWasCanceled(int placementId) {
-            // this function is called when a
-            // parental gate pop-up "cancel" button is pressed
-        }
-
-        @Override
-        public void parentalGateWasFailed(int placementId) {
-            // this function is called when a
-            // parental gate pop-up "continue" button is
-            // pressed and the parental gate
-            // failed (because the numbers weren't OK)
-        }
-
-        @Override
-        public void parentalGateWasSucceded(int placementId) {
-            // this function is called when a
-            // parental gate pop-up "continue" button is
-            // pressed and the parental gate succeeded
-        }
-    }
-
-Video callbacks
-^^^^^^^^^^^^^^^
-
-To catch video ad callbacks (available only for SAVideoAd and SAVideoActivity objects):
-
-* Your Activity must implement the **SAVideoAdInterface**:
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAVideoAdInterface {
-
-        // class member variables
-        private SALoader loader = null;
-        private SAAd videoAdData = null;
-        private SAVideoAd videoAd = null;
-
-        // rest of the implementation ...
-
-    }
-
-* the Activity must be set as delegate for your display objects:
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAVideoAdInterface {
-
-        // rest of the implementation ...
-
-        public void showVideo(View v){
-            if (videoAdData != null) {
-                video = (SAVideoAd) findViewById(R.id.myvideo);
-                video.setAd(videoAdData);
-                video.setVideoAdListener(this);
-                video.play();
-            }
-        }
-    }
-
-* your Activity must implement the callback methods specified by SAAdInterface
-
-.. code-block:: java
-
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface,
-                      SAVideoAdInterface {
-
-        // rest of the implementation ...
-
-        @Override
-        public void adStarted(int placementId) {
-            // fired when an ad has started
-        }
-
-        @Override
-        public void videoStarted(int placementId) {
-            // fired when a video ad has started
-        }
-
-        @Override
-        public void videoReachedFirstQuartile(int placementId) {
-            // fired when a video ad has reached 1/4 of total duration
-        }
-
-        @Override
-        public void videoReachedMidpoint(int placementId) {
-            // fired when a video ad has reached 1/2 of total duration
-        }
-
-        @Override
-        public void videoReachedThirdQuartile(int placementId) {
-            // fired when a video ad has reached 3/4 of total duration
-        }
-
-        @Override
-        public void videoEnded(int placementId) {
-            // fired when a video ad has ended
-        }
-
-        @Override
-        public void adEnded(int placementId) {
-            // fired when an ad has ended
-        }
-
-        @Override
-        public void allAdsEnded(int placementId) {
-            // fired when all ads have ended
-        }
-    }
+    });

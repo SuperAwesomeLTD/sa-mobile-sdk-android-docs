@@ -29,74 +29,36 @@ few lines of code.
 
     // imports ...
 
-    public class MainActivity
-           extends Activity
-           implements SALoaderInterface {
+    public class MainActivity extends Activity {
 
-        private SALoader loader = null;
-        private SAAd bannerAdData = null;
         private SABannerAd banner = null;
 
         @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+        protected void onCreate (Bundle savedInstanceState) {
+            super.onCreate (savedInstanceState);
+            setContentView (R.layout.activity_main);
 
-            // set SuperAwesome setup
-            SuperAwesome.getInstance().setApplicationContext(getApplicationContext());
-            SuperAwesome.getInstance().enableTestMode();
-            SuperAwesome.getInstance().setConfigurationProduction();
+            // set app context
+            SuperAwesome.getInstance ().setApplicationContext( getApplicationContext ());
 
-            //
-            // load ad data from the network just once
-            // when the activity is first created
-            if (savedInstanceState == null) {
-                loader = new SALoader();
-                loader.loadAd(30741, this);
-            }
-            //
-            // then reuse the same data from the
-            // saved bundle
-            //
-            // also at this point we'll need to
-            // re-create the banner
-            else {
-                bannerAdData = (SAAd)savedInstanceState.get("bannerAdData");
-                restoreBanner();
-            }
-        }
+            // get the banner
+            bannerAd = (SABannerAd) findViewById (R.id.mybanner);
 
-        @Override
-        public void didLoadAd(SAAd ad) {
-            // ad data is loaded and can be saved
-            // in a member variable
-            bannerAdData = ad;
+            // setup the banner
+            bannerAd.disableParentalGate ();
 
-            // start creating the banner
-            createBanner();
-        }
+            // add a callback
+            SAVideoAd.setListener(new SAInterface () {
+                @Override
+                public void onEvent(int placementId, SAEvent event) {
+                    if (event == SAEvent.adLoaded) {
+                        bannerAd.play (MainActivity.this);
+                    }
+                }
+            });
 
-        @Override
-        public void didFailToLoadAdForPlacementId(int placementId) {
-            // if this function gets called
-            // there was no ad data to be shown
-        }
-
-        // function that creates a banner ad
-        private void createBanner() {
-            if (bannerAdData != null) {
-                banner = (SABannerAd) findViewById(R.id.mybanner);
-                banner.setAd(bannerAdData);
-                banner.play();
-            }
-        }
-
-        // same as create banner - but this signals
-        // this should get called
-        // when trying to restore from
-        // orientation change
-        private void restoreBanner() {
-            createBanner();
+            // start the loading process
+            bannerAd.load (30471);
         }
     }
 
@@ -106,175 +68,67 @@ Complex example
 This example shows how you can add different types of ads and make them respond to
 multiple callbacks.
 
-**activity_main.xml**
-
-.. code-block:: xml
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Load Interstitial"
-        android:onClick="playInterstitial"/>
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Load Fullscreen Video"
-        android:onClick="playVideo"/>
-
-
-**MainActivity.java**
-
 .. code-block:: java
 
     // imports ...
 
-    public class MainActivity
-            extends Activity
-            implements SALoaderInterface,
-                        SAAdInterface,
-                        SAParentalGateInterface,
-                        SAVideoAdInterface {
+    public class MainActivity extends Activity {
 
         // private SALoader class member
         private SALoader loader = null;
 
-        // declare SAAd objects to save data in
-        private SAAd interstitialAdData = null;
-        private SAAd videoAdData = null;
-
-        // the two ads to be displayed
-        private SAInterstitialAd interstitial = null;
-        private SAFullscreenVideoAd fvideo = null;
-
         @Override
         protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_main);
+            super.onCreate (savedInstanceState);
+            setContentView (R.layout.activity_main);
 
-            // setup SuperAwesome test environment
-            SuperAwesome.getInstance().setApplicationContext(getApplicationContext());
-            SuperAwesome.getInstance().enableTestMode();
-            SuperAwesome.getInstance().setConfigurationProduction();
+            // set app context
+            SuperAwesome.getInstance ().setApplicationContext( getApplicationContext ());
 
-            // when the activity first starts
-            // load two ads in parallel,
-            // from the network
-            if (savedInstanceState == null) {
-                loader = new SALoader();
-                loader.loadAd(30473, this);
-                loader.loadAd(30479, this);
-            }
-            // restore ad data when
-            // savedInstanceState is not null
-            else {
-                interstitialAdData = (SAAd)savedInstanceState.get("interstitialAdData");
-                videoAdData = (SAAd)savedInstanceState.get("videoAdData");
-            }
+            // get the banner
+            bannerAd = (SABannerAd) findViewById (R.id.mybanner);
+
+            // setup the banner
+            bannerAd.enableParentalGate ();
+
+            // and load it
+            bannerAd.load (30471);
+
+            // setup the video
+            SAVideoAd.disableParentalGate ();
+            SAVideoAd.disableCloseButton ();
+
+            // load
+            SAVideoAd.load (30479);
+            SAVideoAd.load (30480);
         }
 
-        @Override
-        public void didLoadAd(SAAd ad) {
-            // save interstitial data
-            if (ad.placementId == 30473) {
-                interstitialAdData = ad;
-            }
-            // or save video adta
-            else if (ad.placementId == 30479) {
-                videoAdData = ad;
+        public void playBanner (View view) {
+            if (banner.hasAdAvailable ()) {
+                banner.play (MainActivity.this);
             }
         }
 
-        @Override
-        public void didFailToLoadAdForPlacementId(int placementId) {
+        public void playVideo1 (View view) {
+            if (SAVideoAd.hasAdAvailable (30479)) {
 
-        }
+                // do some last minute setup
+                SAVideoAd.setOrientationLandscape ();
 
-        @Override
-        protected void onSaveInstanceState(Bundle outState) {
-            outState.putParcelable("interstitialAdData", interstitialAdData);
-            outState.putParcelable("videoAdData", videoAdData);
-            super.onSaveInstanceState(outState);
-        }
-
-        public void playInterstitial(View v){
-            if (interstitialAdData != null) {
-                interstitial = new SAInterstitialActivity(MainActivity.this);
-                interstitial.setAd(interstitialAdData);
-                interstitial.setIsParentalGateEnabled(true);
-                interstitial.setParentalGateListener(this);
-                interstitial.setAdListener(this);
-                interstitial.play();
+                // and play
+                SAVideoAd.play (30479, MainActivity.this);
             }
         }
 
-        public void playVideo(View v){
-            if (videoAdData != null) {
-                fvideo = new SAFullscreenVideoAd(MainActivity.this);
-                fvideo.setAd(videoAdData);
-                fvideo.setShouldAutomaticallyCloseAtEnd(true);
-                fvideo.setShouldShowCloseButton(true);
-                fvideo.setShouldLockOrientation(true);
-                fvideo.setLockOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                fvideo.setVideoAdListener(this);
-                fvideo.setIsParentalGateEnabled(false);
-                fvideo.play();
+        public void playVideo2 (View view) {
+
+            if (SAVideoAd.hasAdAvailable (30480)) {
+
+                // do some last minute setup
+                SAVideoAd.setOrientationAny ();
+
+                // and play
+                SAVideoAd.play (30480, MainActivity.this);
             }
-        }
-
-        //
-        // SAAdInterface implementation
-
-        @Override
-        public void adWasShown(int placementId) {
-            Lod.d("SuperAwesome", "Ad " + placementId + " has shown!");
-        }
-
-        @Override
-        public void adFailedToShow(int placementId) {}
-        @Override
-        public void adWasClosed(int placementId) {}
-        @Override
-        public void adWasClicked(int placementId) {}
-        @Override
-        public void adHasIncorrectPlacement(int placementId) {}
-
-        //
-        // SAParentalGateInterface implementation
-
-        @Override
-        public void parentalGateWasCanceled(int placementId) {}
-        @Override
-        public void parentalGateWasFailed(int placementId) {}
-        @Override
-        public void parentalGateWasSucceded(int placementId) {}
-
-        //
-        // SAVideoAdInterface implementation
-
-
-        @Override
-        public void adStarted(int placementId) {}
-        @Override
-        public void videoStarted(int placementId) {}
-        @Override
-        public void videoReachedFirstQuartile(int placementId) {}
-
-        @Override
-        public void videoReachedMidpoint(int placementId) {
-            Lod.d("SuperAwesome", "Video reached Halfpoint");
-        }
-
-        @Override
-        public void videoReachedThirdQuartile(int placementId) {}
-        @Override
-        public void videoEnded(int placementId) {}
-        @Override
-        public void adEnded(int placementId) {}
-
-        @Override
-        public void allAdsEnded(int placementId) {
-            Lod.d("SuperAwesome", "All ads in video have ended");
         }
     }
