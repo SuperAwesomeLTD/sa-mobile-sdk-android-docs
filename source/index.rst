@@ -28,5 +28,6 @@ Table of Contents:
    Interstitial Ads <05interstitial>
    Video Ads <06video>
    Ad callbacks <07callbacks>
-   Integrate with MoPub <08mopub>
-   Examples <09examples>
+   Handle CPI <08cpi>
+   Integrate with MoPub <09mopub>
+   Examples <10examples>
