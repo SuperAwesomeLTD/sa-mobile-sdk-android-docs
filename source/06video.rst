@@ -28,7 +28,7 @@ The following block of code creates and loads a video ad:
             SAVideoAd.disableCloseAtEnd ();
 
             // start loading ad data for a placement
-            SAVideoAd.load (30479);
+            SAVideoAd.load (30479, MainActivity.this);
         }
     }
 

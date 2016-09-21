@@ -26,9 +26,6 @@ In your activity or fragment:
             super.onCreate (savedInstanceState);
             setContentView (R.layout.activity_main);
 
-            // set the app context
-            SuperAwesome.getInstance ().setApplicationContext (getApplicationContext ());
-
             // get the banner from the layout
             bannerAd = (SABannerAd) findViewById (R.id.mybanner);
 

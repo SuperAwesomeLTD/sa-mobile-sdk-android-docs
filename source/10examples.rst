@@ -32,9 +32,6 @@ few lines of code.
             super.onCreate (savedInstanceState);
             setContentView (R.layout.activity_main);
 
-            // set app context
-            SuperAwesome.getInstance ().setApplicationContext( getApplicationContext ());
-
             // get the banner
             bannerAd = (SABannerAd) findViewById (R.id.mybanner);
 
@@ -93,8 +90,8 @@ multiple callbacks.
             SAVideoAd.disableCloseButton ();
 
             // load
-            SAVideoAd.load (30479);
-            SAVideoAd.load (30480);
+            SAVideoAd.load (30479, MainActivity.this);
+            SAVideoAd.load (30480, MainActivity.this);
         }
 
         public void playBanner (View view) {

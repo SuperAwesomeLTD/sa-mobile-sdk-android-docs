@@ -22,7 +22,7 @@ The following block of code creates and loads an interstitial ad:
             SAInterstitialAd.enableParentalGate ();
 
             // start loading ad data for a placement
-            SAInterstitialAd.load (30473);
+            SAInterstitialAd.load (30473, MainActivity.this);
         }
     }
 
