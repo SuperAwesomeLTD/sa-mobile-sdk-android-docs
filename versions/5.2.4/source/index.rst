@@ -10,9 +10,9 @@ The SuperAwesome Android SDK (Software Development Kit) lets you to easily add C
 Info            Contents
 =============== ========
 Version         <sdk_version>
-Android Support <sdk_min>
+Support         <sdk_min>
 GitHub          <sdk_source>
-Support         `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
+Contact         `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
 License         `LICENSE <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/develop_v3/LICENSE>`_
 =============== ========
 
