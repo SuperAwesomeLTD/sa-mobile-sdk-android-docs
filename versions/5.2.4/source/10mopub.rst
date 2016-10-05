@@ -19,21 +19,15 @@ the following format:
 
     dependencies {
         # add SuperAwesome SDK
-        compile 'tv.superawesome.sdk:superawesome:<sdk_version_android>'
+        compile 'tv.superawesome.sdk:superawesome:<sdk_version>'
         # or add the base SDK
-        # compile 'tv.superawesome.sdk:superawesome-base:<sdk_version_android>'
+        # compile 'tv.superawesome.sdk:superawesome-base:<sdk_version>'
 
         # add MoPub plugin
-        compile 'tv.superawesome.sdk:samopub:<sdk_version_android>'
+        compile 'tv.superawesome.sdk:samopub:<sdk_version>'
     }
 
-You can also download the MoPub adatper as a .jar archive, from here `SuperAwesomeSDK-<sdk_version_android>.Android.MoPubPlugin.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/SuperAwesomeSDK-<sdk_version_android>.Android.MoPubPlugin.jars.zip?raw=true>`_.
-
-The MoPub plugin will contain three main classes that conform to MoPub's guidelines regarding 3rd party ad network adapters:
-
-  * `SuperAwesomeBannerCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeBannerCustomEvent.java>`_
-  * `SuperAwesomeInterstitialCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeInterstitialCustomEvent.java>`_
-  * `SuperAwesomeRewardedVideoCustomEvent.java <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/master/demo/samopub/src/main/java/com/mopub/sa/mobileads/SuperAwesomeRewardedVideoCustomEvent.java>`_
+You can also download the MoPub adatper as a .jar archive, from here `SuperAwesomeSDK-<sdk_version>.Android.MoPubPlugin.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/<sdk_version>/SuperAwesomeSDK-<sdk_version>.Android.MoPubPlugin.jars.zip?raw=true>`_.
 
 2) Setup a MoPub custom network
 

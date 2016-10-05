@@ -20,7 +20,7 @@ module.
 .. code-block:: shell
 
     dependencies {
-        compile 'tv.superawesome.sdk:superawesome:<sdk_version_android>'
+        compile 'tv.superawesome.sdk:superawesome:<sdk_version>'
     }
 
 Alternatively, if you want a base version of the SDK, you can declare the following dependency:
@@ -28,7 +28,7 @@ Alternatively, if you want a base version of the SDK, you can declare the follow
 .. code-block:: shell
 
     dependencies {
-        compile 'tv.superawesome.sdk:superawesome-base:<sdk_version_android>'
+        compile 'tv.superawesome.sdk:superawesome-base:<sdk_version>'
     }
 
 This has the same functionality as the full version, but lacks the Moat Analytics module.
