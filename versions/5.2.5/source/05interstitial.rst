@@ -18,6 +18,9 @@ The following block of code creates and loads an interstitial ad:
             // lock orientation to portrait or landscape
             SAInterstitialAd.setOrientationPortrait ();
 
+            // enable or disable the android back button
+            SAInterstitialAd.enableBackButton ();
+
             // ask users to add two numbers when clicking on an ad
             SAInterstitialAd.enableParentalGate ();
 
