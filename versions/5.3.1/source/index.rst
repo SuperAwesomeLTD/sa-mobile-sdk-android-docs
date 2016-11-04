@@ -27,7 +27,7 @@ Table of Contents:
    Banner Ads <04banner>
    Interstitial Ads <05interstitial>
    Video Ads <06video>
-	 App Wall <appwall>
+   App Wall <07appwall>
    Ad callbacks <08callbacks>
    Handle CPI <09cpi>
    Integrate with MoPub <10mopub>
