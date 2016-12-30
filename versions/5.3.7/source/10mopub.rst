@@ -27,7 +27,7 @@ the following format:
         compile 'tv.superawesome.sdk:samopub:<sdk_version>'
     }
 
-You can also download the MoPub adatper as a .jar archive, from here `SuperAwesomeSDK-<sdk_version>.Android.MoPubPlugin.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/android/<sdk_version>/SuperAwesomeSDK-<sdk_version>.Android.MoPubPlugin.jars.zip?raw=true>`_.
+You can also download the MoPub adatper as a .jar archive, from here `SuperAwesomeSDK-<sdk_version>.Android.MoPubPlugin.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/aa_android/<sdk_version>/SuperAwesomeSDK-<sdk_version>.Android.MoPubPlugin.jars.zip?raw=true>`_.
 
 2) Setup a MoPub custom network
 
