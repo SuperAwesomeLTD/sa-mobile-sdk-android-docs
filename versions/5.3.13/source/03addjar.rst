@@ -33,15 +33,21 @@ Add the following items in your *AndroidManifest.xml* file, under the Applicatio
               android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
               android:configChanges="keyboardHidden|orientation|screenSize"></activity>
 
-		<activity android:name="tv.superawesome.sdk.views.SAAppWall"
-							android:label="SAGameWall"
-					    android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-					    android:configChanges="keyboardHidden|orientation|screenSize"></activity>
+    <activity android:name="tv.superawesome.sdk.views.SAAppWall"
+              android:label="SAAppWall"
+              android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
+              android:configChanges="keyboardHidden|orientation|screenSize"></activity>
 
-    <service android:name="tv.superawesome.lib.sanetwork.asynctask.SAAsyncTask$SAAsync" android:exported="false"/>
+    <service  android:name="tv.superawesome.lib.sanetwork.asynctask.SAAsyncTask$SAAsync"
+              android:exported="false"
+              android:permission="tv.superawesome.sdk.SuperAwesomeSDK"/>
 
-    <receiver android:name="tv.superawesome.sdk.cpi.SACPI" android:exported="true">
-        <intent-filter><action android:name="com.android.vending.INSTALL_REFERRER"/></intent-filter>
+    <receiver android:name="tv.superawesome.sdk.cpi.SACPI"
+              android:exported="false"
+              android:permission="tv.superawesome.sdk.SuperAwesomeSDK">
+              <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+              </intent-filter>
     </receiver>
 
 This will register two new activities, one service and one receiver for your application, all needed by the SDK.
