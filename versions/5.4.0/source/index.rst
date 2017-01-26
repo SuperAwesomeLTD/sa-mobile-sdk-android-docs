@@ -1,22 +1,38 @@
 .. This page should present an overview of the whole documentation, with a TOC
    as well as a main table that lists the most important stuff about the project
 
-SuperAwesome Android SDK
-========================
+AwesomeAds Android SDK
+======================
 
-The SuperAwesome Android SDK (Software Development Kit) lets you to easily add COPPA compliant advertisements to your apps.
+The AwesomeAds Android SDK (Software Development Kit) lets you to easily add COPPA compliant advertisements to your apps.
 
 =============== ========
 Info            Contents
 =============== ========
-Version         <sdk_version>
+Version         <sdk_version> (`Changelog <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/blob/master/CHANGELOG.md>`_)
 Support         <sdk_min>
 GitHub          <sdk_source>
 Contact         `<sdk_devsuspport> <mailto:<sdk_devsuspport>>`_
-License         `LICENSE <https://raw.githubusercontent.com/SuperAwesomeLTD/sa-mobile-sdk-android/develop_v3/LICENSE>`_
+License         `GNU General Public License Version 3 <https://github.com/SuperAwesomeLTD/sa-mobile-sdk-android/blob/master/LICENSE>`_
 =============== ========
 
-Table of Contents:
+AwesomeAds Demo App
+-------------------
+
+Check out the new AwesomeAds Demo App, now available on the Play Store.
+It lets you preview and troubleshoot all mobile ads on the AwesomeAds platform, on the go!
+
++-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+| .. image:: img/appscr1.jpeg | .. image:: img/appscr2.jpeg | .. image:: img/appscr3.jpeg | .. image:: img/appscr4.jpeg |
+|   :width: 100px             |   :width: 100px             |   :width: 100px             |   :width: 100px             |
+|   :height: 178px            |   :height: 178px            |   :height: 178px            |   :height: 178px            |
++-----------------------------+-----------------------------+-----------------------------+-----------------------------+
+
+.. image:: img/appstore.png
+  :target: https://play.google.com/store/apps/details?id=aademo.superawesome.tv.awesomeadsdemo
+
+Table of Contents
+-----------------
 
 .. toctree::
    :maxdepth: 2
