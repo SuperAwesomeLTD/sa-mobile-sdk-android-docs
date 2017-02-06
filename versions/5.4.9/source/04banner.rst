@@ -53,3 +53,6 @@ Once you've loaded an ad, you can also display it:
             bannerAd.play (MainActivity.this);
         }
     }
+
+.. warning:: All instances of SABannerAd **must** have an Android ID assigned.
+             Avoiding to correctly set one either in your XML layout or in code will cause the banner to crash with an exception.
