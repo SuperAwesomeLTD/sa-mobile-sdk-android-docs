@@ -11,16 +11,9 @@ You can download one of two zip archives:
 
 Once downloaded and extracted, you can follow these steps:
 
-The archives will contain a number of .jar files, representing the components of the SDK:
-Add them to the **lib** folder in your Android project.
+The archives will contain a number of .jar files, representing the components of the SDK that you'll need to add to the **lib** folder in your Android project.
 
-There will also be a **superawesome-res** folder containing two subfolders:
-
-1) drawable: containing SDK PNG files; copy the PNG files inside your projects' **drawable** folder
-
-2) layout: containing SDK layout XML files; copy the XML files inside your projects' **layout** folder
-
-Add the following items in your *AndroidManifest.xml* file, under the Application tag:
+Then, add the following items in your *AndroidManifest.xml* file, under the Application tag:
 
 .. code-block:: xml
 
