@@ -57,9 +57,9 @@ And assign custom inventory details for Banner, Interstitial and Video ads:
 
 Notice that the custom event classes required by MoPub are:
 
-* for Banner Ads: **tv.superawesome.plugins.publisher.mopub.SAMoPubBannerCustomEvent**
-* for Interstitial Ads: **tv.superawesome.plugins.publisher.mopub.SAMoPubInterstitialCustomEvent**
-* for Rewarded Video Ads: **tv.superawesome.plugins.publisher.mopub.SAMoPubVideoCustomEvent**
+* for Banner Ads: **com.mobub.sa.mobileads.SAMoPubBannerCustomEvent**
+* for Interstitial Ads: **com.mobub.sa.mobileads.SAMoPubInterstitialCustomEvent**
+* for Rewarded Video Ads: **com.mobub.sa.mobileads.SAMoPubVideoCustomEvent**
 
 Finally, you can tell MoPub what AwesomeAds ads to load and how to display them by filling out the
 custom event class data field with a JSON similar to this:
