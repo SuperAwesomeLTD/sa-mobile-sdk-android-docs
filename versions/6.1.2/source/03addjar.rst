@@ -31,6 +31,12 @@ Then, add the following items in your *AndroidManifest.xml* file, under the Appl
               android:screenOrientation="portrait"
               android:configChanges="keyboardHidden|orientation|screenSize"></activity>
 
+    <activity android:name="tv.superawesome.lib.sabumperpage.SABumperPage"
+              android:label="SABumperPage"
+              android:configChanges="keyboardHidden|orientation|screenSize"
+              android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
+              android:excludeFromRecents="true"/>
+
     <service  android:name="tv.superawesome.lib.sanetwork.asynctask.SAAsyncTask$SAAsync"
               android:exported="false"
               android:permission="tv.superawesome.sdk.SuperAwesomeSDK"/>
