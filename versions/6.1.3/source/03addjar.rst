@@ -25,12 +25,6 @@ Then, add the following items in your *AndroidManifest.xml* file, under the Appl
               android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
               android:configChanges="keyboardHidden|orientation|screenSize"></activity>
 
-    <activity android:name="tv.superawesome.sdk.publisher.SAAppWall"
-              android:label="SAAppWall"
-              android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"
-              android:screenOrientation="portrait"
-              android:configChanges="keyboardHidden|orientation|screenSize"></activity>
-
     <activity android:name="tv.superawesome.lib.sabumperpage.SABumperPage"
               android:label="SABumperPage"
               android:configChanges="keyboardHidden|orientation|screenSize"
