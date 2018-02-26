@@ -21,9 +21,7 @@ the following format:
     dependencies {
         # add SuperAwesome SDK
         compile 'tv.superawesome.sdk:superawesome:<sdk_version>'
-        # or add the base SDK
-        # compile 'tv.superawesome.sdk:superawesome-base:<sdk_version>'
-
+        
         # add MoPub plugin
         compile 'tv.superawesome.sdk:saadmob:<sdk_version>'
     }
