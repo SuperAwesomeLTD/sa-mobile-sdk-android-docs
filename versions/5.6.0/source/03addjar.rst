@@ -3,15 +3,9 @@ Add the SDK as a JAR library
 
 If you're running an environment which does not support Gradle, then you'll need to add the SDK manually.
 
-You can download one of two zip archives:
+You can download this zip archive: `SuperAwesomeSDK-<sdk_version>.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/aa_android/<sdk_version>/SuperAwesomeSDK-<sdk_version>.Android.full.jars.zip?raw=true>`_
 
-1) `SuperAwesomeSDK-<sdk_version>.Android.full.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/aa_android/<sdk_version>/SuperAwesomeSDK-<sdk_version>.Android.full.jars.zip?raw=true>`_
-
-2) `SuperAwesomeSDK-<sdk_version>.Android.base.jars.zip <https://github.com/SuperAwesomeLTD/sa-sdk-build-repo/blob/master/package/aa_android/<sdk_version>/SuperAwesomeSDK-<sdk_version>.Android.base.jars.zip?raw=true>`_
-
-Once downloaded and extracted, you can follow these steps:
-
-The archives will contain a number of .jar files, representing the components of the SDK that you'll need to add to the **lib** folder in your Android project.
+The archive will contain a number of .jar files, representing the components of the SDK that you'll need to add to the **lib** folder in your Android project.
 
 Then, add the following items in your *AndroidManifest.xml* file, under the Application tag:
 

@@ -19,11 +19,9 @@ the following format:
     }
 
     dependencies {
-        # add the full Android Publisher SDK
+        # add the Android Publisher SDK
         compile 'tv.superawesome.sdk.publisher:superawesome:<sdk_version>'
-        # or add the base SDK
-        # compile 'tv.superawesome.sdk.publisher:superawesome-base:<sdk_version>'
-
+        
         # add MoPub plugin
         compile 'tv.superawesome.sdk.publisher:samopub:<sdk_version>'
     }
