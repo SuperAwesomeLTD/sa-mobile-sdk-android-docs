@@ -11,6 +11,9 @@ The first step is to include the following Maven repository in your module's **b
         maven {
             url  'http://dl.bintray.com/gabrielcoman/maven'
         }
+        maven {
+           url "http://dl.bintray.com/superawesome/SuperAwesomeSDK"
+        }
     }
 
 Next you can to add the SDK as a dependency. This will contain everything you need in order to load and display banner, interstitial and video ads.
@@ -18,7 +21,17 @@ Next you can to add the SDK as a dependency. This will contain everything you ne
 .. code-block:: shell
 
     dependencies {
-        compile 'tv.superawesome.sdk.publisher:superawesome:<sdk_version>'
+        implementation 'tv.superawesome.sdk.publisher:superawesome:<sdk_version>'
+    }
+
+
+.. warning:: Please remember to also add **Google Play Services** and an **App Compat** library. These are needed for correct viewability metrics.
+
+.. code-block:: shell
+
+    dependencies {
+        implementation 'com.android.support:appcompat-v7:+'
+        implementation 'com.google.android.gms:play-services-ads:+'
     }
 
 Once you've added the Android Publisher SDK, you can access all functionality by including:

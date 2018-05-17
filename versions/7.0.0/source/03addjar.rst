@@ -36,7 +36,14 @@ Also, add the following permissions to your AndroidManifest.xml file:
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-At the end you'll also need to add **Google Play Services** as a dependency to the project, either as a .jar or through Gradle.
+.. warning:: Please remember to also add **Google Play Services** and an **App Compat** library. These are needed for correct viewability metrics.
+
+.. code-block:: shell
+
+    dependencies {
+        implementation 'com.android.support:appcompat-v7:+'
+        implementation 'com.google.android.gms:play-services-ads:+'
+    }
 
 Once you've integrated the Android Publisher SDK, you can access all functionality by including:
 
